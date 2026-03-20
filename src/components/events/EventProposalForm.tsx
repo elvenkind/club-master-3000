@@ -72,7 +72,7 @@ export const EventProposalForm = ({ onSubmit }: EventProposalFormProps) => {
               InputLabelProps={{ shrink: true }}
               required
             />
-            <Button variant="contained" type="submit" disabled={submitting}>
+            <Button variant="contained" type="submit" disabled={submitting} className="min-h-[44px]">
               {submitting ? t('eventForm.saving') : t('eventForm.submit')}
             </Button>
           </Stack>

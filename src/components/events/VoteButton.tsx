@@ -8,7 +8,12 @@ interface VoteButtonProps {
 
 export const VoteButton = ({ event, onVote }: VoteButtonProps) => {
   return (
-    <Button variant="outlined" size="small" onClick={() => onVote(event)}>
+    <Button
+      variant="outlined"
+      size="small"
+      onClick={() => onVote(event)}
+      className="min-w-[44px] min-h-[44px]"
+    >
       👍 {event.votes}
     </Button>
   )

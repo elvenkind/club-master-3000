@@ -28,6 +28,8 @@ const resources = {
         proposals: 'Ehdotukset',
         calendar: 'Kalenteri',
         language: 'Kieli',
+        openMenu: 'Avaa valikko',
+        changeLanguage: 'Vaihda kieli',
       },
       language: {
         fi: 'Suomi',
@@ -70,6 +72,8 @@ const resources = {
         proposals: 'Proposals',
         calendar: 'Calendar',
         language: 'Language',
+        openMenu: 'Open menu',
+        changeLanguage: 'Change language',
       },
       language: {
         fi: 'Suomi',
