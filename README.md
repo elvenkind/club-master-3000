@@ -47,5 +47,11 @@ src/
     events/           # Event-related UI components
   hooks/              # Reusable hooks (useEvents)
   lib/                # API client and constants
-  pages/              # Ro  pages/              # es/           # JSON S  pages/    ce  pages/                 # S  pages/   s (  pages/ 
-  ty  ty  ty  t       # Type  ty  ty mai  ty  ty  ty  t  .json       ty  t # JS  ty  ter mock da  ty  ty  ty  t       # Type  uggest  tyice   ty  ty  ty  Up  te   ty  ty  ty  t       # Type  ty  s   ty  ty  ty  t 
+  pages/              # Route pages
+  services/           # API service modules
+  types/              # TypeScript type definitions
+  assets/             # Static assets
+  styles/             # Global styles
+db/
+  db.json             # JSON Server mock data
+```
