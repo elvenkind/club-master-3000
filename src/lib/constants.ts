@@ -1,0 +1,1 @@
+export const CONFIRMATION_VOTE_THRESHOLD = 5
