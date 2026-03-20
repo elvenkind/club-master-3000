@@ -1,6 +1,7 @@
 import Button from '@mui/material/Button'
 import { useState } from 'react'
 import type { ClubEvent } from '../../types/event'
+import { useCoinSound } from '../../hooks/useCoinSound'
 
 interface VoteButtonProps {
   event: ClubEvent
@@ -9,8 +10,10 @@ interface VoteButtonProps {
 
 export const VoteButton = ({ event, onVote }: VoteButtonProps) => {
   const [isPopping, setIsPopping] = useState(false)
+  const playCoinSound = useCoinSound()
 
   const handleVote = () => {
+    playCoinSound()
     setIsPopping(true)
     window.setTimeout(() => setIsPopping(false), 340)
     onVote(event)
