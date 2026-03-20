@@ -81,6 +81,7 @@ This repository includes VS Code MCP configuration at `.vscode/mcp.json` for Git
 - Never commit tokens or secrets into repository files.
 - Prefer OAuth over PAT whenever possible.
 - If PAT is required, use least privilege and rotate it regularly.
+<<<<<<< HEAD
 
 ### 4) Tehtävänanto sovelluksen toteutusta varten
 
@@ -106,3 +107,5 @@ Järjestelmästä voisi löytyä esimerkiksi seuraavia ominaisuuksia:
 ## 📦 Tuotokset
 - Sovellus pitää olla saatavilla julkisessa repossa. Esim. Github.
 - Tiimi valmistautuu esittelemään tuotoksen Joensuu Monthlyssä.
+=======
+>>>>>>> 68f40fd (Add GitHub MCP server configuration)
