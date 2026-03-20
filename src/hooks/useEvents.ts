@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
+import i18n from '../i18n'
 import { eventService } from '../services/eventService'
 import type { ClubEvent, NewClubEvent } from '../types/event'
 
@@ -15,7 +16,7 @@ export const useEvents = () => {
       const data = await eventService.list()
       setEvents(data)
     } catch {
-      setError('Failed to load events. Is JSON Server running?')
+      setError(i18n.t('errors.loadEvents'))
     } finally {
       setLoading(false)
     }
