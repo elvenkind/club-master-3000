@@ -1,5 +1,9 @@
 # club-master-3000
 
+## Remote:
+- commitit, puskut, yms. tehdään tänne
+https://github.com/elvenkind/club-master-3000/
+
 ## Tech stack
 - React + TypeScript
 - Vite
