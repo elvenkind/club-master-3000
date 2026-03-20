@@ -6,6 +6,7 @@ import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import { useState } from 'react'
 import type { FormEvent } from 'react'
+import { useTranslation } from 'react-i18next'
 import type { NewClubEvent } from '../../types/event'
 
 interface EventProposalFormProps {
@@ -19,6 +20,7 @@ const initialState: NewClubEvent = {
 }
 
 export const EventProposalForm = ({ onSubmit }: EventProposalFormProps) => {
+  const { t } = useTranslation()
   const [form, setForm] = useState<NewClubEvent>(initialState)
   const [submitting, setSubmitting] = useState(false)
 
@@ -45,25 +47,25 @@ export const EventProposalForm = ({ onSubmit }: EventProposalFormProps) => {
     <Card>
       <CardContent>
         <Typography variant="h6" className="mb-4">
-          Ehdota tapahtumaa
+          {t('eventForm.title')}
         </Typography>
         <form onSubmit={handleSubmit}>
           <Stack spacing={2}>
             <TextField
-              label="Tapahtuman nimi"
+              label={t('eventForm.nameLabel')}
               value={form.title}
               onChange={(event) => handleChange('title', event.target.value)}
               required
             />
             <TextField
-              label="Kuvaus"
+              label={t('eventForm.descriptionLabel')}
               value={form.description}
               onChange={(event) => handleChange('description', event.target.value)}
               multiline
               minRows={3}
             />
             <TextField
-              label="Päivämäärä"
+              label={t('eventForm.dateLabel')}
               type="date"
               value={form.date}
               onChange={(event) => handleChange('date', event.target.value)}
@@ -71,7 +73,7 @@ export const EventProposalForm = ({ onSubmit }: EventProposalFormProps) => {
               required
             />
             <Button variant="contained" type="submit" disabled={submitting}>
-              {submitting ? 'Tallennetaan...' : 'Lähetä ehdotus'}
+              {submitting ? t('eventForm.saving') : t('eventForm.submit')}
             </Button>
           </Stack>
         </form>
