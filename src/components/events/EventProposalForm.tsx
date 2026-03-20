@@ -44,20 +44,22 @@ export const EventProposalForm = ({ onSubmit }: EventProposalFormProps) => {
   }
 
   return (
-    <Card>
+    <Card className="retro-form-card">
       <CardContent>
-        <Typography variant="h6" className="mb-4">
+        <Typography variant="h6" className="mb-4 retro-panel-title">
           {t('eventForm.title')}
         </Typography>
-        <form onSubmit={handleSubmit}>
-          <Stack spacing={2}>
+        <form onSubmit={handleSubmit} className="retro-form">
+          <Stack spacing={2.25}>
             <TextField
+              className="retro-input"
               label={t('eventForm.nameLabel')}
               value={form.title}
               onChange={(event) => handleChange('title', event.target.value)}
               required
             />
             <TextField
+              className="retro-input"
               label={t('eventForm.descriptionLabel')}
               value={form.description}
               onChange={(event) => handleChange('description', event.target.value)}
@@ -65,6 +67,7 @@ export const EventProposalForm = ({ onSubmit }: EventProposalFormProps) => {
               minRows={3}
             />
             <TextField
+              className="retro-input"
               label={t('eventForm.dateLabel')}
               type="date"
               value={form.date}
@@ -72,7 +75,12 @@ export const EventProposalForm = ({ onSubmit }: EventProposalFormProps) => {
               InputLabelProps={{ shrink: true }}
               required
             />
-            <Button variant="contained" type="submit" disabled={submitting} className="min-h-[44px]">
+            <Button
+              variant="contained"
+              type="submit"
+              disabled={submitting}
+              className="min-h-[48px] retro-submit-button"
+            >
               {submitting ? t('eventForm.saving') : t('eventForm.submit')}
             </Button>
           </Stack>

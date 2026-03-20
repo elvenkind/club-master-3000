@@ -2,17 +2,37 @@ import { createTheme } from '@mui/material/styles'
 
 export const theme = createTheme({
   palette: {
+    background: {
+      default: '#f5e5ff',
+      paper: '#e5fbff',
+    },
+    text: {
+      primary: '#2c1560',
+    },
     primary: {
-      main: '#360185', // Tumma violetti
+      main: '#6f1fcb',
     },
     secondary: {
-      main: '#8F0177', // Magenta
+      main: '#ff2fd1',
     },
-    error: {
-      main: '#DE1A58', // Pinkki/punainen (accent)
+    success: {
+      main: '#39ff14',
     },
     warning: {
-      main: '#F4B342', // Keltainen/oranssi (highlight)
+      main: '#ffbf33',
+    },
+  },
+  typography: {
+    fontFamily: 'Rajdhani, Segoe UI, sans-serif',
+    h1: { fontFamily: 'Press Start 2P, monospace' },
+    h2: { fontFamily: 'Press Start 2P, monospace' },
+    h3: { fontFamily: 'Press Start 2P, monospace' },
+    h4: { fontFamily: 'Press Start 2P, monospace' },
+    h5: { fontFamily: 'Press Start 2P, monospace' },
+    h6: { fontFamily: 'Press Start 2P, monospace' },
+    button: {
+      fontWeight: 700,
+      textTransform: 'uppercase',
     },
   },
 })

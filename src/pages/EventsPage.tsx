@@ -16,7 +16,9 @@ export const EventsPage = () => {
   return (
     <PageContainer>
       <Stack spacing={3}>
-        <Typography variant="h4">{t('eventsPage.title')}</Typography>
+        <Typography variant="h4" className="retro-page-title">
+          {t('eventsPage.title')}
+        </Typography>
         {error && <Alert severity="error">{error}</Alert>}
         {loading ? (
           <Stack alignItems="center" className="py-8">

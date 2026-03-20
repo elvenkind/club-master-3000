@@ -18,10 +18,11 @@ import MenuIcon from '@mui/icons-material/Menu'
 import { useState } from 'react'
 import type { MouseEvent } from 'react'
 import { useTranslation } from 'react-i18next'
-import { NavLink, Outlet } from 'react-router-dom'
+import { NavLink, Outlet, useLocation } from 'react-router-dom'
 
 export const AppLayout = () => {
   const { t, i18n } = useTranslation()
+  const location = useLocation()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))
   const [languageMenuAnchor, setLanguageMenuAnchor] = useState<null | HTMLElement>(null)
@@ -57,8 +58,8 @@ export const AppLayout = () => {
   ]
 
   return (
-    <Box className="min-h-screen bg-slate-50">
-      <AppBar position="static">
+    <Box className="retro-shell retro-scroll">
+      <AppBar position="static" className="retro-topbar" elevation={0}>
         <Toolbar className="gap-3">
           {isMobile && (
             <IconButton
@@ -71,18 +72,25 @@ export const AppLayout = () => {
               <MenuIcon />
             </IconButton>
           )}
-          <Typography variant="h6" className="mr-auto">
+          <Typography variant="h6" className="mr-auto retro-brand">
             {t('app.title')}
           </Typography>
           {!isMobile && (
             <>
               {navItems.map((item) => (
-                <Button key={item.to} color="inherit" component={NavLink} to={item.to}>
+                <Button
+                  key={item.to}
+                  color="inherit"
+                  component={NavLink}
+                  to={item.to}
+                  className={`retro-nav-button ${location.pathname === item.to ? 'is-active' : ''}`}
+                >
                   {item.label}
                 </Button>
               ))}
               <Button
                 color="inherit"
+                className="retro-nav-button"
                 aria-controls={isLanguageMenuOpen ? 'language-menu' : undefined}
                 aria-haspopup="true"
                 aria-expanded={isLanguageMenuOpen ? 'true' : undefined}
@@ -97,6 +105,7 @@ export const AppLayout = () => {
             anchorEl={languageMenuAnchor}
             open={isLanguageMenuOpen}
             onClose={closeLanguageMenu}
+            className="retro-language-menu"
           >
             <MenuItem selected={activeLanguage === 'fi'} onClick={() => changeLanguage('fi')}>
               {t('language.fi')}
@@ -114,6 +123,7 @@ export const AppLayout = () => {
         open={mobileMenuOpen}
         onClose={closeMobileMenu}
         ModalProps={{ keepMounted: true }}
+        className="retro-drawer"
       >
         <Box className="w-64" role="presentation">
           <List>
@@ -123,7 +133,7 @@ export const AppLayout = () => {
                   component={NavLink}
                   to={item.to}
                   onClick={closeMobileMenu}
-                  className="min-h-[48px]"
+                  className="min-h-[48px] retro-drawer-link"
                 >
                   <ListItemText primary={item.label} />
                 </ListItemButton>
@@ -138,7 +148,7 @@ export const AppLayout = () => {
                   changeLanguage(activeLanguage === 'fi' ? 'en' : 'fi')
                   closeMobileMenu()
                 }}
-                className="min-h-[48px]"
+                className="min-h-[48px] retro-drawer-link"
               >
                 <ListItemText
                   primary={`${t('nav.language')}: ${t(`language.${activeLanguage}`)}`}
@@ -150,7 +160,9 @@ export const AppLayout = () => {
         </Box>
       </Drawer>
 
-      <Outlet />
+      <Box component="main" className="relative z-10">
+        <Outlet />
+      </Box>
     </Box>
   )
 }

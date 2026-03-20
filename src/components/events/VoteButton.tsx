@@ -1,4 +1,5 @@
 import Button from '@mui/material/Button'
+import { useState } from 'react'
 import type { ClubEvent } from '../../types/event'
 
 interface VoteButtonProps {
@@ -7,12 +8,20 @@ interface VoteButtonProps {
 }
 
 export const VoteButton = ({ event, onVote }: VoteButtonProps) => {
+  const [isPopping, setIsPopping] = useState(false)
+
+  const handleVote = () => {
+    setIsPopping(true)
+    window.setTimeout(() => setIsPopping(false), 340)
+    onVote(event)
+  }
+
   return (
     <Button
-      variant="outlined"
+      variant="contained"
       size="small"
-      onClick={() => onVote(event)}
-      className="min-w-[44px] min-h-[44px]"
+      onClick={handleVote}
+      className={`min-h-[44px] retro-vote-button ${isPopping ? 'retro-vote-pop' : ''}`}
     >
       👍 {event.votes}
     </Button>

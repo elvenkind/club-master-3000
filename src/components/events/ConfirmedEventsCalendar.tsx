@@ -15,9 +15,9 @@ export const ConfirmedEventsCalendar = ({ events }: ConfirmedEventsCalendarProps
   const { t } = useTranslation()
 
   return (
-    <Card>
+    <Card className="retro-calendar-card">
       <CardContent>
-        <Typography variant="h5" className="mb-4">
+        <Typography variant="h5" className="mb-4 retro-panel-title">
           {t('calendar.title')}
         </Typography>
         {events.length === 0 ? (
@@ -25,7 +25,7 @@ export const ConfirmedEventsCalendar = ({ events }: ConfirmedEventsCalendarProps
         ) : (
           <List>
             {events.map((event) => (
-              <ListItem key={event.id} divider>
+              <ListItem key={event.id} className="retro-calendar-item">
                 <ListItemText primary={event.title} secondary={`${event.date} • 👍 ${event.votes}`} />
               </ListItem>
             ))}
