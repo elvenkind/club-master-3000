@@ -3,8 +3,14 @@
 ## Purpose
 Generate clean, production-ready React CRUD code with consistent architecture, error handling, and naming.
 
-## Repository Status
-This repository is currently minimal (no `package.json` yet). Prefer adding only files and commands that match existing project setup.
+## Tech Stack (from README)
+- React
+- Vite
+- JSON Server
+- Material UI
+- Tailwind CSS
+- ESLint
+- Prettier
 
 ## Architecture Guidelines (React CRUD)
 - Use functional components and React Hooks only.
@@ -23,6 +29,8 @@ This repository is currently minimal (no `package.json` yet). Prefer adding only
 - Use `async/await` and throw explicit errors for non-OK responses.
 - Surface user-friendly error messages in the UI.
 - Do not swallow errors silently.
+- Use JSON Server as the default mock/backend API during development.
+- Keep API base URL configurable (for example via Vite environment variables).
 
 ## State Management
 - Use `useState` for local state.
@@ -40,12 +48,18 @@ This repository is currently minimal (no `package.json` yet). Prefer adding only
 - Reuse existing helpers instead of duplicating logic.
 - Prefer explicit names over abbreviations.
 - Add tests for key CRUD flows when test tooling exists.
+- Keep ESLint and Prettier clean; do not bypass lint rules without reason.
+
+## UI Rules (Material UI + Tailwind)
+- Use Material UI components for accessibility and consistent UI primitives.
+- Use Tailwind utility classes for layout/spacing and small visual adjustments.
+- Do not duplicate the same styling intent in both systems excessively; keep styles maintainable.
 
 ## Build/Test Commands
-Only run commands that exist in `package.json` scripts once the React project is initialized.
-Typical React workflow (when scripts exist):
+Use only scripts that exist in `package.json`.
+Typical Vite + React workflow (when scripts exist):
 - `npm install`
-- `npm start`
+- `npm run dev`
 - `npm test`
 - `npm run build`
 - `npm run lint`
