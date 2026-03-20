@@ -1,5 +1,14 @@
 # club-master-3000
 
+# Tech stack:
+- React
+- Json Server
+- Vite
+- Prettier
+- Eslint
+- Material UI
+- Tailwind
+
 ## GitHub MCP Server setup (VS Code + Copilot CLI)
 
 This repository includes VS Code MCP configuration at `.vscode/mcp.json` for GitHub MCP Server.
@@ -25,3 +34,28 @@ This repository includes VS Code MCP configuration at `.vscode/mcp.json` for Git
 - Never commit tokens or secrets into repository files.
 - Prefer OAuth over PAT whenever possible.
 - If PAT is required, use least privilege and rotate it regularly.
+
+### 4) Tehtävänanto sovelluksen toteutusta varten
+
+# 🧩 Tehtäväkortti: Toimiston klubitoiminta -sovellus
+
+## 📝 Taustakuvaus
+Klubitoiminta pitää mielen virkeänä ja parantaa toimiston henkilökunnan yhteenkuuluvuutta. 
+Olisipa meillä sovellus jossa pystyisi organisoimaan toimiston klubitoimintaa ja tapahtumia.
+
+## 📌 Tehtävänanto
+Rakenna prototyyppi toimiston klubitoimintaa varten.
+
+Järjestelmästä voisi löytyä esimerkiksi seuraavia ominaisuuksia:
+- Sovelluksessa pystyy ehdottamaan tapahtumia
+- Sovelluksessa pystyy yläpeukuttamaan ehdotettuja tapahtumia
+- Sovelluksesta näkee varmistuneet tapahtumat ns. tapahtumakalenteri
+
+## ⚙️ Rajaukset ja reunaehdot
+- Pitäkää scope realistisena. Ts. mitä kerkeätte iltapäivän aikana tekemään. 
+- Ehdottomia vaatimuksia ei ole. Toteutatte vaatimuksen itse kuten parhaaksi näette.
+- Jätetään optio jatkokehitykselle esim. penkkiajalle.
+
+## 📦 Tuotokset
+- Sovellus pitää olla saatavilla julkisessa repossa. Esim. Github.
+- Tiimi valmistautuu esittelemään tuotoksen Joensuu Monthlyssä.
