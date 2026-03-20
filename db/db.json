@@ -1,0 +1,32 @@
+{
+  "events": [
+    {
+      "id": "1",
+      "title": "Afterwork Board Games",
+      "description": "Rentoa pelailua toimistolla työpäivän jälkeen",
+      "date": "2026-03-27",
+      "votes": 20,
+      "confirmed": true,
+      "createdAt": "2026-03-20T09:00:00.000Z"
+    },
+    {
+      "id": "2",
+      "title": "Lounaslenkki",
+      "description": "Kevyt kävelylenkki ja lounas porukalla",
+      "date": "2026-03-29",
+      "votes": 12,
+      "confirmed": true,
+      "createdAt": "2026-03-20T09:15:00.000Z"
+    },
+    {
+      "id": "07cd",
+      "title": "Pekan paras tapahtuma",
+      "description": "Pekan paras tapahtuma",
+      "date": "2026-03-20",
+      "votes": 18,
+      "confirmed": true,
+      "createdAt": "2026-03-20T11:34:31.577Z"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
